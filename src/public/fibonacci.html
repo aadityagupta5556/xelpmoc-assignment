@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <div class="container-fluid">
+    <header>
+      <h1> Print the Fibonacci numbers of the given inputs and the range</h1>
+    </header>
+
+    <label>number 1</label>
+    <input type="number" name="number1" id="number1" placeholder="enter single digit number"> <br>
+    <br>
+    <label>number 2</label>
+    <input type="number" name="number2" id="number2" placeholder="enter single digit number"><br>
+    <br>
+    <label>Range</label>
+    <input type="number" name="range" id="range" placeholder="enter range"><br>
+    <br>
+    <button type="button" class="btn btn-info" onclick="submit()">submit</button><br><br>
+    <div class="screen" id="screen1"></div>
+
+
+  </div>
+
+
+  <script>
+
+
+    function submit() {
+
+      function fibonacci(number) {
+
+        var answer = [];
+
+        var a = document.getElementById("number1").value;
+        var b = document.getElementById("number2").value;
+        var x = parseInt(a);
+        var y = parseInt(b);
+        var z;
+
+
+        var i = 1;
+        while (i <= number) {
+          z = x + y;
+          x = y;
+          y = z;
+
+          answer.push(z);
+          i = i + 1;
+        }
+        return answer;
+      }
+
+      var number = document.getElementById("range").value;
+      var range = parseInt(number);
+
+      answer = fibonacci(range);
+
+
+      document.getElementById("screen1").innerHTML = answer;
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
